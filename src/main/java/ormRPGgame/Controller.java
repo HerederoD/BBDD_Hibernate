@@ -44,11 +44,27 @@ public class Controller {
      */
     public Daga createDaga(String nombre) throws SQLException{
         // @TODO complete este metodo para crear de forma presistente una daga
-
+        Daga daga = new Daga(nombre);
+        if(session.load(Daga.class, nombre) != null)
+        {
+            throw new SQLException();
+        }
+        session.beginTransaction();
+        session.save(daga);
+        session.getTransaction().commit();
+        return daga;
     }
 
     public Mago createMago(String magician, Daga daga) throws SQLException {
         // @TODO complete este metodo para crear de forma presistente un mago
-
+        Mago mago = new Mago(magician, daga);
+        if(session.load(Mago.class, magician) != null)
+        {
+            throw new SQLException();
+        }
+        session.beginTransaction();
+        session.save(mago);
+        session.getTransaction().commit();
+        return mago;
     }
 }
