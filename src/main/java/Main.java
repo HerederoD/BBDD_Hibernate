@@ -12,8 +12,8 @@ public class Main {
             // @TODO añada las llamadas a las funciones de la clase Controller.java
             // necesarias
             // para la creación de la daga y el mago.
-            Daga daga = createDaga("NombreDaga");
-            Mago mago = createMago("NombreMago", daga);
+            Daga daga = controlador.createDaga("NombreDaga");
+            Mago mago = controlador.createMago("NombreMago", daga);
             if (daga != null && mago != null)
                 System.out.println(
                         "Se ha creado el mago " + mago.getnombre() + " de nivel 1 con la daga " + daga.getnombre());

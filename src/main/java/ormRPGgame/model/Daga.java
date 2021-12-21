@@ -12,10 +12,12 @@ public class Daga {
     @Column(nullable = false, length = 30)
     private String name;
 
-    public Daga(String nombre){
+    public Daga(String nombre) {
         // @TODO completar el constructor de la clase.
         name = nombre;
     }
 
-    public String getnombre(){ return this.name;}
+    public String getnombre() {
+        return this.name;
+    }
 }
